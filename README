@@ -1,0 +1,29 @@
+This project was done by Pranav Gupta and Ishita Chordia for HackGT 2017. 
+
+## Inspiration
+
+Learning these days happens in a very standardized fashion. It's based on cognitive skills like memory, recall, and analysis. This can be difficult for children who have learning disabilities or who are generally more sensory learners. The idea of this project is to associate skills like engineering, math, and language with music. Each building, equation, or word would have a sound associated with it that helps the student remember, recall, and understand the item.
+
+## What it does
+
+We've developed a piece of software that can turn any Lego set into a "musical" Lego set. Our computer vision algorithm watches students as they place blocks on a black surface and plays a unique sound associated with each block. Students also have the opportunity to choose the kind of instrument whose sounds they want to hear. Although this current iteration only has the engineering-music association, you could imagine blocks with math operations or letters for math-music and English-music associations.
+
+## How I built it
+
+We built this using a lot of trial and error. OpenCV has great image processing tools that allowed us to split the video into frames in real time. We then keep track of the background image and notice any change in color. Changes in color are noted and if we see that same color in the same position in multiple frames, the computer will write the rgb values to to FL studio which maps r, g, and b to channel, pitch, and velocity of the sound.
+
+## Challenges I ran into
+
+One big challenge we ran into was performance on different operating systems. OsX and Windows performed very differently using the same code and tools. 
+The color detector was also challenging- we had to keep subtracting the background in order to only detect changes. We also had to threshold the changes so that minor noise did not result in music. Finally, the entire project took a lot of time- we were very tired by the end.
+
+## Accomplishments that I'm proud of
+
+We're very proud of getting the image detector and the entire pipeline working. It was very challenging and we tried using multiple different algorithms to detect edges, rectangles, and colors before anything worked.
+
+## What I learned
+We learned a lot about image processing and the number of tools available. Neither one of us had ever done a project like this and we learned a lot about image detection, sound generation, mapping. 
+
+## What's next for Harmonic Legos
+
+It would be interesting to implement this with 3D capabilities so the music could play out of someone's Google glasses or a device attached to them that has a camera. It would also be interesting to upload music and get directions on what type of building, equation, or word that would correspond to. 
